@@ -3,7 +3,13 @@ name: Deploy to GCP
 on:
   push:
     branches:
-      - main
+      - main  # Set a branch to deploy
+      - gha-service-account
+  pull_request:
+
+permissions:
+  contents: read
+  id-token: write
 
 jobs:
   deploy:
